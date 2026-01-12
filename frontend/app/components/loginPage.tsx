@@ -19,7 +19,7 @@ export default function LoginPage(){
         });
 
         if (res.ok) {
-            router.push('/');
+            router.push(`/home/${username}`);
         }
     }
     return (

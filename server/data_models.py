@@ -8,5 +8,3 @@ class User(Base):
     name = Column(String, nullable=False)
     department = Column(String, nullable=False)
     designation = Column(String, nullable=False)
-
-class Room
