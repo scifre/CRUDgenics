@@ -62,7 +62,7 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
     else:
         return {"status": "error", "message": "Invalid credentials"}
 
-@app.get("/api/get-user-details/")
+@app.get("/api/get-user-details")
 async def get_user_details(emp_id: str, db: Session = Depends(get_db)):
     sql = text("SELECT * FROM users WHERE emp_id = :emp_id")
     user_query = db.execute(sql, {"emp_id": emp_id})
