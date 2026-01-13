@@ -2,9 +2,15 @@
 import { useEffect, useState } from "react";
 import Body from "../../components/body";
 
+interface UserDetails {
+  department?: string;
+  designation?: string;
+  [key: string]: unknown;
+}
+
 export default function HomeWithId({ params }: { params: Promise<{ empId: string }> }) {
   const [empId, setEmpId] = useState<string>("");
-  const [userDetails, setUserDetails] = useState(null);
+  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
 
   useEffect(() => {
     params.then(({ empId }) => {
