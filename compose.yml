@@ -17,7 +17,7 @@ services:
     env_file:
       - ./server/.env
     ports:
-      - "8000:8000"
+      - "8005:8000"
     depends_on:
       - db
     restart: always
