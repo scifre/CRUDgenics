@@ -65,7 +65,7 @@ export default function MeetingRoomDetails({ roomNumber, empId }: { roomNumber: 
     }
 
     return <>
-        MeetingRoom no {roomNumber}
+        <div className="text-l text-red-400 font-bold">Meeting Room {roomNumber}</div>
         <div className="">
             <div className="mt-4 flex flex-row items-center justify-between w-full">
                 <div className="flex flex-row items-center gap-6">

@@ -62,6 +62,16 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
     else:
         return {"status": "error", "message": "Invalid credentials"}
 
+@app.get("/api/get-user-details/")
+async def get_user_details(emp_id: str, db: Session = Depends(get_db)):
+    sql = text("SELECT * FROM users WHERE emp_id = :emp_id")
+    user_query = db.execute(sql, {"emp_id": emp_id})
+    user = user_query.fetchone()
+    if user:
+        return {"status": "success", "user": dict(user._mapping)}
+    else:
+        return {"status": "error", "message": "User not found"}
+
 @app.get("/api/get-room-details")
 async def get_room_details(room_id: int, date: str, db: Session = Depends(get_db)):
     print(f"Fetching details for room {room_id} on date {date}")
