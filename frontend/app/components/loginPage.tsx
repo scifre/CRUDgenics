@@ -30,11 +30,11 @@ export default function LoginPage(){
                 <form className="space-y-4">
                     <div>
                         <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="username">Username</label>
-                        <input className="w-full border border-gray-300 p-2 rounded" type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                        <input className="w-full border border-gray-300 p-2 rounded text-black" type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div>
                         <label className="block text-sm font-medium mb-1 text-gray-700" htmlFor="password">Password</label>
-                        <input className="w-full border border-gray-300 p-2 rounded" type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input className="w-full border border-gray-300 p-2 rounded text-black" type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700" type="submit" onClick={handleLogin}>Login</button>
                 </form>
@@ -44,7 +44,7 @@ export default function LoginPage(){
                 <div className="text-sm text-gray-700 space-y-2">
                     <p><span className="font-medium">Username:</span> Employee Code</p>
                     <p><span className="font-medium">Password:</span> First letter of your name</p>
-                    <p className="text-gray-500">Example: Employee Code <span className="font-medium">12345</span>, name <span className="font-medium">Alice</span> → password <span className="font-medium">A</span></p>
+                    <p className="text-gray-500">Example: Employee Code <span className="font-medium">12345</span>, name <span className="font-medium">Alice</span> → password <span className="font-medium">a</span></p>
                 </div>
             </div>
             <div className="bg-white p-8 rounded shadow-md w-96">

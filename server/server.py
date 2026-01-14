@@ -49,8 +49,8 @@ def create_user(emp_code:str, password: str, name: str, department: str, designa
 
 @app.post("/api/login")
 def login(payload: LoginRequest, db: Session = Depends(get_db)):
-    emp_id = payload.emp_id
-    password = payload.password
+    emp_id = payload.emp_id.upper()
+    password = payload.password.lower()
     print(f"Login attempt for emp_id: {emp_id}")
     sql = text("SELECT * FROM users WHERE emp_id = :emp_id")
     user_query = db.execute(sql, {"emp_id": emp_id})
