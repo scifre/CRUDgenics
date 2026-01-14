@@ -55,8 +55,6 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
     sql = text("SELECT * FROM users WHERE emp_id = :emp_id")
     user_query = db.execute(sql, {"emp_id": emp_id})
     user = user_query.fetchone()
-
-    # use the row mapping to access columns safely
     if user and user._mapping.get("password") == password:
         return {"status": "success", "message": "Login successful", "user": dict(user._mapping)}
     else:
@@ -78,7 +76,6 @@ async def get_room_details(room_id: int, date: str, db: Session = Depends(get_db
     sql = text("SELECT * FROM reservations WHERE room_no = :room_no AND reservation_date = :date")
     room_query = db.execute(sql, {"room_no": room_id, "date": date})
     room_details = room_query.fetchall()
-    # Row objects expose a ._mapping for a dict-like interface
     details = [dict(row._mapping) for row in room_details]
     return {"room_id": room_id, "date": date, "details": details}
 
