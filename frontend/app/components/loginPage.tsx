@@ -53,7 +53,8 @@ export default function LoginPage(){
                     <li>Frontend: Next.js</li>
                     <li>Backend: FastAPI</li>
                     <li>Database: PostgreSQL</li>
-                    <li>Frontend, backend, and DB are containerized and deployed with Docker Compose on AWS EC2</li>
+                    <li>Frontend, Backend, and Database are deployed as separate containers</li>
+                    <li>The app is hosted on AWS EC2 and containers are managed by Docker Compose</li>
                 </ul>
             </div>
         </div>
