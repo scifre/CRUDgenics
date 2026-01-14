@@ -11,7 +11,7 @@ export default function Body({ empId }: { empId?: string }) {
     return (
         <>
             <div className="bg-white flex flex-col md:flex-row gap-2 min-h-screen p-6 minw-screen">
-                <div className="grid grid-cols-3 gap-6 h-full flex-1 md:grid-cols-1">
+                <div className="grid grid-cols-3 gap-6 h-full flex-1">
                     {rooms.map((name, idx) => (
                         <button
                             key={idx}
