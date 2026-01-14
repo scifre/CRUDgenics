@@ -10,8 +10,8 @@ export default function Body({ empId }: { empId?: string }) {
     const rooms = Array.from({ length: 6 }, (_, i) => `Meeting Room ${i + 1}`)
     return (
         <>
-            <div className="bg-white flex gap-4 min-h-screen p-6 minw-screen">
-                <div className="grid grid-cols-3 gap-6 h-full flex-1">
+            <div className="bg-white flex flex-col md:flex-row gap-2 min-h-screen p-6 minw-screen">
+                <div className="grid grid-cols-3 gap-6 h-full flex-1 md:grid-cols-1">
                     {rooms.map((name, idx) => (
                         <button
                             key={idx}
@@ -23,7 +23,7 @@ export default function Body({ empId }: { empId?: string }) {
                         </button>
                     ))}
                 </div>
-                <div className="bg-white basis-2/5 p-6 rounded-lg shadow-md flex flex-col border border-gray-200">
+                <div className="bg-white w-full md:basis-2/5 p-6 rounded-lg shadow-md flex flex-col border border-gray-200">
                     <h2 className="text-xl font-semibold mb-4 text-blue-400">Meeting Room Details</h2>
                     {selectedRoom == null ?(
                     <div className="text-gray-600 flex-1 flex items-center justify-center">

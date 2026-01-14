@@ -24,7 +24,7 @@ export default function LoginPage(){
     }
     return (
         <>
-        <div className="w-full h-screen flex justify-center items-center bg-gray-100 gap-4">
+        <div className="w-full h-screen flex justify-center items-center bg-gray-100 gap-4 md:flex flex-col">
             <div className="bg-white p-8 rounded shadow-md w-96">
                 <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">Login</h2>
                 <form className="space-y-4">
