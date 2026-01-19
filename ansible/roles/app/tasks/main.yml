@@ -1,0 +1,18 @@
+- name: Create application directory
+  file:
+    path: /opt/app
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Copy docker-compose file
+  synchronize:
+    src: ./
+    dest: /opt/app/
+    delete: yes
+
+- name: Start application containers
+  command: docker compose up -d
+  args:
+    chdir: /opt/app

@@ -1,0 +1,16 @@
+- name: Install nginx (if not present)
+  apt:
+    name: nginx
+    state: present
+
+- name: Copy site config
+  template:
+    src: site.conf.j2
+    dest: /etc/nginx/sites-available/crudgenics
+
+- name: Enable site
+  file:
+    src: /etc/nginx/sites-available/crudgenics
+    dest: /etc/nginx/sites-enabled/crudgenics
+    state: link
+  notify: Reload nginx

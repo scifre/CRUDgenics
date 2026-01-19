@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:16
+    container_name: crudgenics_db
+    env_file:
+      - db.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./meetres_v3.sql:/docker-entrypoint-initdb.d/meetres_v3.sql
+    ports:
+      - "5432:5432"
+    restart: always
+
+  server:
+    image: scifre/crudgenics:server
+    container_name: crudgenics_server
+    env_file:
+      - server.env
+    ports:
+      - "8005:8000"
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  pgdata:
